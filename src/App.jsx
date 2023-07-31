@@ -3,14 +3,13 @@ import Authenticate from './components/Authenitcate'
 import { useState } from 'react'
 import './App.css'
 
-function App() {
+export default function App() {
+  const [token, setToken] = useState(null);
 
   return (
     <>
-    <SignUpForm/>
-    <Authenticate/>
+      <SignUpForm token={token} setToken={setToken} />
+      <Authenticate token={token} setToken={setToken} />
     </>
-  )
+  );
 }
-
-export default App
